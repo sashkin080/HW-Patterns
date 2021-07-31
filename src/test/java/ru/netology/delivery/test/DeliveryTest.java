@@ -42,7 +42,7 @@ class DeliveryTest {
         $("[class=button__text]").click();
         $("[data-test-id=replan-notification]").shouldHave(exactText("Необходимо подтверждение" + "\n" + "У вас уже запланирована встреча на другую дату. Перепланировать?" + "\n" + "Перепланировать"));
         $("[data-test-id=replan-notification] .button__text").shouldHave(exactText("Перепланировать")).click();
-        $("[data-test-id=success-notification]").shouldHave(exactText("Успешно!" + "" + "Встреча успешно запланирована на " + DataGenerator.generateDate(+3)));
+        $("[data-test-id=success-notification]").shouldHave(exactText("Успешно!" + "\n" + "Встреча успешно запланирована на " + DataGenerator.generateDate(+3)));
 
     }
 }
