@@ -1,6 +1,9 @@
 package ru.netology.delivery.test;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,6 +21,7 @@ class DeliveryTest {
 
     @BeforeEach
     void setUp() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         open("http://localhost:9999");
         $("[data-test-id=date] input").doubleClick();
         $("[data-test-id=date] input").sendKeys(Keys.DELETE);
